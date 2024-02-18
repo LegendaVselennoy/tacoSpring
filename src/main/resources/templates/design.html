@@ -7,6 +7,12 @@
 <body>
 <h1>Design your taco!</h1>
 <form method="POST" th:object="${taco}">
+    <div th:if="${#fields.hasErrors()}">
+        <span class="validationError">
+        Please select at least 1 ingredient and
+        the name must be at least 5 characters long!
+        </span>
+    </div>
     <div class="grid">
         <div class="ingredient-group" id="wraps">
             <h3>Designate your wrap:</h3>
